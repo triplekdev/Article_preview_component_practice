@@ -2,64 +2,64 @@
 
 @layer global {
 	
-	/* montserrat-500 - latin */
+	/* manrope-500 - latin */
 	@font-face {
 		font-display: swap;
 		/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'Montserrat';
+		font-family: 'Manrope';
 		font-style: normal;
 		font-weight: 500;
-		src: url('fonts/montserrat-v31-latin-500.woff2') format('woff2');
+		src: url('fonts/manrope-v20-latin-500.woff2') format('woff2');
 		/* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 	}
 	
-	/* montserrat-700 - latin */
+	/* manrope-700 - latin */
 	@font-face {
 		font-display: swap;
 		/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'Montserrat';
+		font-family: 'Manrope';
 		font-style: normal;
 		font-weight: 700;
-		src: url('fonts/montserrat-v31-latin-700.woff2') format('woff2');
-		/* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-	}
-	
-	/* fraunces-700 - latin */
-	@font-face {
-		font-display: swap;
-		/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'Fraunces';
-		font-style: normal;
-		font-weight: 700;
-		src: url('fonts/fraunces-v38-latin-700.woff2') format('woff2');
+		src: url('fonts/manrope-v20-latin-700.woff2') format('woff2');
 		/* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 	}
 	
 	:root {
 		/* || FONT SIZES */
+		--FS-13: calc(13 / 16 * 1rem);
 		--FS-14: calc(14 / 16 * 1rem);
-		--FS-16: calc(16 / 16 * 1rem);
+		--FS-15: calc(15 / 16 * 1rem) --FS-16: calc(16 / 16 * 1rem);
 		--FS-17: calc(17 / 16 * 1rem);
+		--FS-20: calc(20 / 16 * 1rem);
 		--FS-28: calc(28 / 16 * 1rem);
 		--FS-38: calc(38 / 16 * 1rem);
 		
-		--FS-PARAGRAPH: var(--FS-16);
-		--FS-H3: var(--FS-17);
-		--FS-TITLE: var(--FS-38);
+		--FS-PARAGRAPH: var(--FS-15);
+		--FS-H3: var(--FS-20);
 		
 		@media (width >=calc(600 / 16 * 1rem)) {
-			--FS-PARAGRAPH: var(--FS-16);
+			--FS-PARAGRAPH: var(--FS-13);
 		}
 		
 		/* || COLORS */
 		
 		/* || PRIMARY */
-
-		/* || NEUTRAL */
-
+		
+		--C-VERY-DARK-GRAYISH-BLUE: hsl(217, 19%, 35%);
+		--C-DESATURATED-DARK-BLUE: hsl(214, 17%, 51%);
+		--C-GRAYISH-BLUE: hsl(212, 23%, 69%);
+		--C-LIGHT-GRAYISH-BLUE: hsl(210, 46%, 95%);
+		--C-WHITE: hsl(0, 0%, 100%);
 		
 		/* || SPECIFIED */
-
+		
+		--C-BODY-BG: var(--C-LIGHT-GRAYISH-BLUE);
+		--C-MAIN-BG: var(--C-WHITE);
+		--C-HEADER-TEXT: var(--C-VERY-DARK-GRAYISH-BLUE);
+		--C-CONTENT-TEXT: var(--C-DESATURATED-DARK-BLUE);
+		--C-DATE: var(--C-GRAYISH-BLUE);
+		--C-SHARE-ICON: var(--C-DESATURATED-DARK-BLUE);
+		--C-SHARE-SECTION: var(--C-VERY-DARK-GRAYISH-BLUE);
 	}
 	
 	/* || RESET */
@@ -102,8 +102,239 @@
 		font-weight: 500;
 	}
 }
-  
-  
+
+@layer components {
+	.main {
+		display: flex;
+		flex-flow: column;
+		gap: calc(10 / 16 * 1rem);
+		background: var(--C-MAIN-BG);
+		justify-content: center;
+		align-items: center;
+		max-width: calc(100% - calc(70 / 16 * 1rem));
+		border-radius: calc(12 / 16 * 1rem);
+		
+		@media (width >=calc(600 / 16 * 1rem)) {
+			flex-flow: row;
+		}
+		
+		.main__image-section {
+			width: 100%;
+			
+			.main__image {
+				
+				min-width: 100%;
+				border-radius: calc(12 / 16 * 1rem) calc(12 / 16 * 1rem) 0 0;
+				object-fit: cover;
+				height: calc(240 / 16 * 1rem);
+				object-position: top;
+				
+				@media (width >=calc(600 / 16 * 1rem)) {
+					border-radius: calc(12 / 16 * 1rem) 0 0 calc(12 / 16 * 1rem);
+					max-width: calc(300 / 16 * 1rem);
+					max-height: calc(250 / 16 * 1rem);
+				}
+			}
+			
+		}
+		
+		.main__part {
+			max-width: 90%;
+			display: flex;
+			flex-flow: column;
+			flex-wrap: wrap;
+			gap: calc(20 / 16 * 1rem);
+			padding-bottom: 0;
+			/* padding-bottom: calc(30 / 16 * 1rem); */
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				max-width: calc(400 / 16 * 1rem);
+				padding: 0 calc(20 / 16 * 1rem) 0 calc(10 / 16 * 1rem);
+			}
+		}
+		
+		.main__text {
+			max-width: 98%;
+			padding-inline: calc(25 / 16 * 1rem);
+			margin-top: calc(20 / 16 * 1rem);
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				padding: 0 calc(20 / 16 * 1rem) 0 calc(10 / 16 * 1rem);
+				margin: 0;
+			}
+			
+			.header-text {
+				font-family: "Manrope", Arial, Helvetica, sans-serif;
+				font-weight: 700;
+				font-size: var(--FS-H3);
+				color: var(--C-HEADER-TEXT);
+				margin-bottom: 20px;
+			}
+			
+			.content {
+				font-family: "Manrope", Arial, Helvetica, sans-serif;
+				font-size: var(--FS-PARAGRAPH);
+				color: var(--C-CONTENT-TEXT);
+				font-weight: 500;
+				text-align: left;
+				
+			}
+		}
+		
+		.author-section {
+			display: flex;
+			max-width: 100%;
+			padding: calc(15 / 16 * 1rem) calc(25 / 16 * 1rem) calc(25 / 16 * 1rem) calc(25 / 16 * 1rem);
+			align-items: center;
+			flex-flow: row;
+			justify-content: space-between;
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				padding: 0 calc(20 / 16 * 1rem) 0 calc(10 / 16 * 1rem);
+				margin: 0;
+			}
+			
+			.author-info {
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+				gap: calc(20 / 16 * 1rem);
+				width: 300px;
+			}
+			
+			.author-pic {
+				width: calc(45 / 16 * 1rem);
+				border-radius: 50%;
+			}
+			
+			.author-name {
+				display: block;
+				font-family: "Manrope", Arial, Helvetica, sans-serif;
+				font-size: var(--FS-PARAGRAPH);
+				color: var(--C-HEADER-TEXT);
+				font-weight: 700;
+			}
+			
+			.date {
+				display: block;
+				margin-top: 3px;
+				font-weight: 500;
+				color: var(--C-DATE);
+			}
+			
+			
+		}
+		
+		.share-links {
+			display: none;
+			max-width: 100%;
+			justify-content: space-around;
+			flex-flow: row;
+			border-radius: 0 0 calc(12 / 16 * 1rem) calc(12 / 16 * 1rem);
+			align-items: center;
+			padding: calc(16 / 16 * 1rem);
+			background-color: var(--C-SHARE-SECTION);
+			width: 100%;
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				position: absolute;
+				top: 1000px;
+				left: 680px;
+				padding: calc(12 / 16 * 1rem) calc(25 / 16 * 1rem);
+				justify-content: center;
+				border-radius: calc(10 / 16 * 1rem) calc(10 / 16 * 1rem) calc(10 / 16 * 1rem) calc(10 / 16 * 1rem);
+				max-width: 230px;
+			}
+			
+		}
+		
+		.share-links span {
+			font-family: "Manrope", Arial, Helvetica, sans-serif;
+			font-size: var(--FS-PARAGRAPH);
+			color: var(--C-GRAYISH-BLUE);
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: calc(7 / 16 * 1rem);
+		}
+		
+		.test {
+			display: flex;
+			justify-content: space-around;
+			flex-flow: row;
+			border-radius: 0 0 calc(12 / 16 * 1rem) calc(12 / 16 * 1rem);
+			align-items: center;
+			background-color: var(--C-SHARE-SECTION);
+			width: 60%;
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				max-width: 200px;
+				justify-content: space-evenly;
+				gap: 10px;
+				width: 100%;
+				
+				&::after {
+					content: "";
+					position: absolute;
+					top: 43px;
+					left: 102px;
+					width: 0;
+					height: 0;
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					border-top: 8px solid var(--C-VERY-DARK-GRAYISH-BLUE);
+				}
+				
+			}
+		}
+		
+		.share-links img {
+			width: 25px;
+			height: 25px;
+		}
+		
+		.share-icon {
+			display: grid;
+			place-content: center;
+			z-index: 100;
+			border-radius: 50%;
+			width: calc(40 / 16 * 1rem);
+			height: calc(35 / 16 * 1rem);
+			position: relative;
+			color: --c;
+			background: var(--C-LIGHT-GRAYISH-BLUE);
+			border: 5px solid var(--C-LIGHT-GRAYISH-BLUE);
+			
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				width: calc(30 / 16 * 1rem);
+				height: calc(30 / 16 * 1rem);
+			}
+		}
+		
+		
+		.share-icon-active {
+			display: grid;
+			place-content: center;
+			z-index: 100;
+			border-radius: 50%;
+			width: calc(35 / 16 * 1rem);
+			height: calc(35 / 16 * 1rem);
+			border: 5px solid var(--C-GRAYISH-BLUE);
+			color: #fff;
+			background: var(--C-GRAYISH-BLUE);
+			
+			@media (width >=calc(600 / 16 * 1rem)) {
+				display: none;
+			}
+		}
+		
+		.share-icon-img {
+			width: calc(15 / 16 * 1rem);
+			height: calc(13 / 16 * 1rem);
+		}
+	}
+}
+
 @layer utilities {
 	.offscreen {
 		position: absolute;
@@ -127,16 +358,18 @@
 		font-size: 11px;
 		text-align: center;
 	}
+	
 	.footer {
-	position: absolute;
-	bottom: 0;
-	.attribution {
-	font-size: 11px;
-	text-align: center;
-}
-
-.attribution a {
-	color: hsl(228, 45%, 44%);
-}
-}
+		position: absolute;
+		bottom: 0;
+		
+		.attribution {
+			font-size: 11px;
+			text-align: center;
+		}
+		
+		.attribution a {
+			color: hsl(228, 45%, 44%);
+		}
+	}
 }

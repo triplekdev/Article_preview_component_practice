@@ -18,40 +18,59 @@
     <section class="main__image-section">
       <h1 class="offscreen">Drawers image</h1>
       <figure class="figure">
-        <img src="images/drawers.jpg" alt="Drawers image" width="300px" height="200px" class="main__image">
+        <img src="images/drawers.jpg" alt="Drawers image" width="400px" height="200px" class="main__image">
       </figure>
     </section>
     
-    <section class="main__text">
-      <h3 class="header-text">
-        Shift the overall look and feel by adding these wonderful
-        touches to furniture in your home
-      </h3>
-      <p class="content">
-        Ever been in a room and felt like something was missing? Perhaps
-        it felt slightly bare and uninviting. I’ve got some simple tips
-        to help you make any room feel complete.
-      </p>
+    <section class="main__part">
+      <section class="main__text">
+        <h3 class="header-text">
+          Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home
+        </h3>
+        <p class="content">
+          Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.
+        </p>
+      </section>
+      
+      <section id="author-section" class="author-section">
+        <div class="author-info">
+         <img src="images/avatar-michelle.jpg" alt="Michelle Appleton" width="50px" height="50px" class="author-pic">
+
+          <p class="author-name">Michelle Appleton <br /> <span class="date">28 Jun 2020</span></p>
+          </div>
+            <button id="share-icon" onclick="share()" class="share-icon">
+              <img src="images/icon-share.svg" alt="share" width="20px" height="20px" class="share-icon-img">
+            </button>
+      </section>
     </section>
     
-    <section class="author-section">
-      <div class="author-info">
-        <img src="images/avatar-michelle.jpg" alt="Michelle Appleton" class="author-pic">
-        <h6 class="author-name">Michelle Appleton</h6>
-        <p class="date">28 Jun 2020</p>
-      </div>
-      <div class="share-links">
+    <section class="share-links">
+      <div class="test">
         <span class="share">
           Share
         </span>
+        <a href="" class="fb">
         <img src="images/icon-facebook.svg" alt="Facebook" width="20px" height="20px" class="facebook">
+        </a>
+        <a href="" class="x">
         <img src="images/icon-twitter.svg" alt="Twitter" width="20px" height="20px" class="twitter">
-        <img src="images/icon-pinterest.svg" alt="Pinterest" width="20px" height="20px" class="pinterest">
+        </a>
+        <a href="" class="p">
+          <img src="images/icon-pinterest.svg" alt="Pinterest" width="20px" height="20px" class="pinterest">
+        </a>
       </div>
-      <div class="share-icon">
-        <img src="images/icon-share.svg" alt="share" width="30px" height="30px" class="share-icon-img">
-      </div>
+      
+      <button class="share-icon-active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+          <path fill="currentColor" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+        
+<!--         <img src="images/icon-share.svg" alt="share" width="20px" height="20px" class="share-icon-img"> -->
+      </button>
     </section>
+    
   </main>
   
   <!-- <footer class="footer">
