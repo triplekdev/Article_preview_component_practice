@@ -1,30 +1,27 @@
 console.log('Hello World!')
 
-const shareSection = document.querySelector(".share-links");
-const activeShareIcon = document.querySelector(".share-icon-active");
-const shareIcon = document.getElementById("share-icon");
-const authorSection = document.getElementById("author-section");
+const mediaQuery = window.matchMedia('(min-width: 600px)');
+const popUp = document.getElementById('share__pop-up')
 
 function share() {
 	// Tab to edit
-	if (screen.width>= 600) {
-		showShareSection()
-		// toggleIconColor()
-	} else if(screen.width < 600) {
-		changeSections()
-	} else {
-		return
+		popUp.classList.toggle('hidden')
+}
+
+function remove() {
+	// Tab to edit
+	popUp.classList.toggle('hidden')
+	if (e.matches) {
+		popUp.classList.toggle('colorchange')
+		console.log('hello')
 	}
 }
 
-function changeSections() {
+function con() {
 	// Tab to edit
-	shareSection.style.display = 'flex';
-	authorSection.style.display = 'none';
+	if (!popUp.classList.contains('hidden')) {
+	popUp.classList.toggle('hidden')
+}
 }
 
-function showShareSection() {
-	// Tab to edit
-	shareSection.style.display = (shareSection.style.display === 'none') ? 'flex' : 'none';
-	authorSection.style.display = 'flex';
-}
+con()
