@@ -2,26 +2,21 @@ console.log('Hello World!')
 
 const mediaQuery = window.matchMedia('(min-width: 600px)');
 const popUp = document.getElementById('share__pop-up')
+const shareSection = document.querySelector('.share-section')
+
 
 function share() {
-	// Tab to edit
 		popUp.classList.toggle('hidden')
+		popUp.classList.add('slideup')
 }
 
 function remove() {
-	// Tab to edit
-	popUp.classList.toggle('hidden')
-	if (e.matches) {
-		popUp.classList.toggle('colorchange')
-		console.log('hello')
+	// Tab to edi
+		popUp.classList.toggle('hidden')
+}
+
+document.addEventListener('click', (e) => {
+	if (!e.target.closest('.share-section')) {
+		popUp.classList.add('hidden')
 	}
-}
-
-function con() {
-	// Tab to edit
-	if (!popUp.classList.contains('hidden')) {
-	popUp.classList.toggle('hidden')
-}
-}
-
-con()
+})
