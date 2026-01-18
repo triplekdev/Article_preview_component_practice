@@ -116,7 +116,7 @@
 		
 		@media (width >=calc(600 / 16 * 1rem)) {
 			flex-flow: row;
-			max-height: calc(270 / 16 * 1rem);
+			max-height: calc(280 / 16 * 1rem);
 		}
 		
 		.main__image-section {
@@ -133,7 +133,7 @@
 				@media (width >=calc(600 / 16 * 1rem)) {
 					border-radius: calc(12 / 16 * 1rem) 0 0 calc(12 / 16 * 1rem);
 					max-width: calc(300 / 16 * 1rem);
-					height: calc(270 / 16 * 1rem);
+					height: calc(280 / 16 * 1rem);
 				}
 			}
 			
