@@ -116,6 +116,7 @@
 		
 		@media (width >=calc(600 / 16 * 1rem)) {
 			flex-flow: row;
+			max-height: calc(270 / 16 * 1rem);
 		}
 		
 		.main__image-section {
